@@ -25,7 +25,7 @@ def edit(request, id):
     client = Client.objects.get(cid=id)  
     return render(request,'edit.html', {'clients':client})  
 def update(request, id):  
-    client = Client.objects.get(id=id)  
+    client = Client.objects.get(cid=id)  
     form = ClientForm(request.POST, instance = client)  
     if form.is_valid():  
         form.save()  
